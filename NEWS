@@ -1,0 +1,32 @@
+***************************
+*      2.0.0 NEWS  	  *
+***************************
+1. add three new functions akashi_test, op_corre_CodonW and op_corre_NCprime.
+2. change the name of three function proportion_index, op_highly and optimal_codon_statistics
+3. split one function optimal_codons into two functions: op_highly and optimal_codon_statistics
+4. change corresponding files, including DESCRIPTION, NAMESPACE, NEWS, manuel files and vignettes
+
+***************************
+*      0.99.4 NEWS  	  *
+***************************
+1. update R version
+
+***************************
+*      0.99.3 NEWS  	  *
+***************************
+1. change VignetteEngine error
+
+***************************
+*      0.99.2 NEWS  	  *
+***************************
+1. add a function genomic_gc3 in the package
+2. change vignette
+
+
+***************************
+*      0.99.1 NEWS  	  *
+***************************
+
+1. import unlist function from BiocGenerics package
+2. change the name of optimal_mutation_index to optimal_index, remove the conditional
+test for genomic GC content should be lower than 50%

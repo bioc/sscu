@@ -1,0 +1,20 @@
+export(
+akashi_test,
+genomic_gc3,
+op_corre_CodonW,
+op_corre_NCprime,
+op_highly,
+optimal_codon_statistics,
+proportion_index,
+s_index
+)
+importFrom(seqinr,
+	s2c,GC3,uco,read.fasta)
+importFrom(Biostrings,
+	readDNAStringSet,trinucleotideFrequency,GENETIC_CODE,alphabetFrequency,translate)
+importFrom(BiocGenerics,
+	unlist)
+importFrom("stats", 
+	"cor.test", "na.omit", "pnorm")
+importFrom("utils", 
+	"read.table")
