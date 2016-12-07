@@ -1,4 +1,4 @@
-optimal_codon_statistics <- function(high_cds_file=NULL,ref_cds_file=NULL,p_cutoff=0.05){
+op_highly_stats <- function(high_cds_file=NULL,ref_cds_file=NULL,p_cutoff=0.01){
   
   calc_frequency <- function(cds_file=NULL){
     

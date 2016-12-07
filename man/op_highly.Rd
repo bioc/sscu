@@ -6,10 +6,10 @@
   Identify optimal codons by using the highly expressed genes method
 }
 \description{
-  Optimal codons are defined as codons significantly enriched in the highly expressed genes compared to the lowly expressed genes, or other set of appropriate reference genes. In another word, these codons were favored by translational selection. This function calculate the optimal codon list, thus user could have a general idea of which codons were preferred by selection in the genome.
+  Optimal codons can be defined as codons significantly enriched in the highly expressed genes compared to the lowly expressed genes, or other set of appropriate reference genes. In another word, these codons were favored by translational selection. This function calculate the optimal codon list, thus user could have a general idea of which codons were preferred by selection in the genome.
 }
 \usage{
-  op_highly(high_cds_file = NULL,ref_cds_file = NULL,p_cutoff = 0.05)
+  op_highly(high_cds_file = NULL,ref_cds_file = NULL,p_cutoff = 0.01)
 }
 \arguments{
   \item{high_cds_file}{
@@ -19,11 +19,11 @@
 	a character vector for the filepath of the reference cds file
 }
   \item{p_cutoff}{
-	a numeric vector to set the cutoff of p value for the chi.square test, default is set to 0.05
+	a numeric vector to set the cutoff of p value for the chi.square test, default is set to 0.01
 }
 }
 \details{
-  Optimal codons are defined as codons significantly enriched in the highly expressed genes compared to the lowly expressed genes, or other set of appropriate reference genes. In another word, these codons were favored by translational selection, which was strongest among highly expressed genes. This function calculate the optimal codon list with p-values, thus user could have a general idea of which codons were preferred by selection in the genome.
+  Optimal codons can be defined as codons significantly enriched in the highly expressed genes compared to the lowly expressed genes, or other set of appropriate reference genes. In another word, these codons were favored by translational selection, which was strongest among highly expressed genes. This function calculate the optimal codon list with p-values, thus user could have a general idea of which codons were preferred by selection in the genome.
   
   The argument high_cds_file should specific the path for the highly expressed gene dataset. It is up to the users how to define which dataset of highly expressed genes. Some studies use the expression data, or Nc value to divide genes into highly/lowly sets. Other studies use a specific dataset, such as only including the very highly expressed genes (ribosomal genes).
 
@@ -48,8 +48,8 @@
   # Here is an example to load the data included in the sscu package
   op_highly(high_cds_file=system.file("sequences/L_kunkeei_highly.ffn",package="sscu"),ref_cds_file=system.file("sequences/L_kunkeei_genome_cds.ffn",package="sscu"))
 
-  # if you want to set the p value cutoff as 0.01
-  op_highly(high_cds_file=system.file("sequences/L_kunkeei_highly.ffn",package="sscu"),ref_cds_file=system.file("sequences/L_kunkeei_genome_cds.ffn",package="sscu"),p_cutoff=0.01)
+  # if you want to set the p value cutoff as 0.05
+  op_highly(high_cds_file=system.file("sequences/L_kunkeei_highly.ffn",package="sscu"),ref_cds_file=system.file("sequences/L_kunkeei_genome_cds.ffn",package="sscu"),p_cutoff=0.05)
 
   # if you want to load your own data, you just specify the file path for your input as these examples
   # op_highly(high_cds_file = "/home/yu/Data/codon_usage/bee_endosymbionts/sharp_40_highly_dataset/Bin2.ffn",ref_cds_file = "/home/yu/Data/codon_usage/bee_endosymbionts/cds_filtered/Bin2.ffn")

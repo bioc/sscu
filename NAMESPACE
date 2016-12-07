@@ -4,8 +4,8 @@ genomic_gc3,
 op_corre_CodonW,
 op_corre_NCprime,
 op_highly,
-optimal_codon_statistics,
-proportion_index,
+op_highly_stats,
+low_frequency_op,
 s_index
 )
 importFrom(seqinr,

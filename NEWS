@@ -1,4 +1,12 @@
 ***************************
+*      2.4.0 NEWS         *
+***************************
+1. edit the proportion_index function into a new function low_frequency_op
+2. change the DESCRIPTION file
+3. modify the man and vignette file accordingly
+4. change the name of the optimal_codon_statistics to op_highly_stats
+
+***************************
 *      2.0.0 NEWS  	  *
 ***************************
 1. add three new functions akashi_test, op_corre_CodonW and op_corre_NCprime.

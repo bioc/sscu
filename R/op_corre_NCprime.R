@@ -47,15 +47,15 @@ op_corre_NCprime <- function(genomic_cds_file=NULL, nc_file=NULL){
     correlations_ncp <- c()
     correlations_ncp_p <- c()
     for(j in 1:64){
-        cortest_nc <- cor.test(rscu_df[,j][logic_vector],nc_df$Nc[logic_vector],
-                               method="spearman", exact=FALSE)
+        cortest_nc <- suppressWarnings(cor.test(rscu_df[,j][logic_vector],nc_df$Nc[logic_vector],
+                               method="spearman", exact=FALSE))
         correlation_nc <- cortest_nc$estimate
         correlation_nc_p <- cortest_nc$p.value
         correlations_nc <- c(correlations_nc, correlation_nc)
         correlations_nc_p <- c(correlations_nc_p, correlation_nc_p)
         
-        cortest_ncp <- cor.test(rscu_df[,j][logic_vector],nc_df$Ncp[logic_vector],
-                               method="spearman", exact=FALSE)
+        cortest_ncp <- suppressWarnings(cor.test(rscu_df[,j][logic_vector],nc_df$Ncp[logic_vector],
+                               method="spearman", exact=FALSE))
         correlation_ncp <- cortest_ncp$estimate
         correlation_ncp_p <- cortest_ncp$p.value
         correlations_ncp <- c(correlations_ncp, correlation_ncp)
@@ -82,7 +82,7 @@ op_corre_NCprime <- function(genomic_cds_file=NULL, nc_file=NULL){
     optimal_codons_nc <- c()
     for(i in 1:18){
         logic_vec <- correlations_nc_p[aa_codons[[i]]] < 0.05/sum(correlations_nc_p[aa_codons[[i]]])
-        min_corres <- min(correlations_nc[aa_codons[[i]]][logic_vec])
+        min_corres <- suppressWarnings(min(correlations_nc[aa_codons[[i]]][logic_vec]))
         optimal_codon_nc <- correlations_nc[aa_codons[[i]]][match(min_corres, correlations_nc[aa_codons[[i]]])]
         optimal_codons_nc <- c(optimal_codons_nc, optimal_codon_nc)
     }
@@ -91,7 +91,7 @@ op_corre_NCprime <- function(genomic_cds_file=NULL, nc_file=NULL){
     optimal_codons_ncp <- c()
     for(i in 1:18){
         logic_vec <- correlations_ncp_p[aa_codons[[i]]] < 0.05/sum(correlations_ncp_p[aa_codons[[i]]])
-        min_corres <- min(correlations_ncp[aa_codons[[i]]][logic_vec])
+        min_corres <- suppressWarnings(min(correlations_ncp[aa_codons[[i]]][logic_vec]))
         optimal_codon_ncp <- correlations_ncp[aa_codons[[i]]][match(min_corres, correlations_ncp[aa_codons[[i]]])]
         optimal_codons_ncp <- c(optimal_codons_ncp, optimal_codon_ncp)
     }
