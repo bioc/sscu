@@ -1,7 +1,7 @@
 Package: sscu
 Type: Package
 Title: Strength of Selected Codon Usage
-Version: 2.34.0
+Version: 2.35.0
 Date: 2016-12-1
 Author: Yu Sun
 Maintainer: Yu Sun <sunyu1357@gmail.com>
